@@ -1,6 +1,6 @@
 ﻿using ProductivityTools.GetTask3.App;
 using ProductivityTools.GetTask3.Client;
-using ProductivityTools.GetTask3.CommonConfiguration;
+using ProductivityTools.GetTask3.Contract;
 using ProductivityTools.GetTask3.Domain;
 using ProductivityTools.GetTask3.SingleCommands;
 using ProductivityTools.GetTask3.View;

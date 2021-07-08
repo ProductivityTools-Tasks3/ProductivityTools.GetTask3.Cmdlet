@@ -34,6 +34,15 @@
     <Reference Include="Description, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Description.1.0.0\lib\Description.dll</HintPath>
     </Reference>
+    <Reference Include="ProductivityTools.ConsoleColors, Version=0.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ProductivityTools.ConsoleColors.0.0.7\lib\netstandard2.0\ProductivityTools.ConsoleColors.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductivityTools.GetTask3.Contract, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ProductivityTools.GetTask3.Contract.0.0.2\lib\netstandard2.0\ProductivityTools.GetTask3.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductivityTools.GetTask3.CoreObjects, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ProductivityTools.GetTask3.CoreObjects.0.0.1\lib\netstandard2.0\ProductivityTools.GetTask3.CoreObjects.dll</HintPath>
+    </Reference>
     <Reference Include="ProductivityTools.PSCmdlet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\ProductivityTools.PSCmdlet.0.0.6\lib\v4.6.1\ProductivityTools.PSCmdlet.dll</HintPath>
     </Reference>
@@ -118,27 +127,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ProductivityTools.ConsoleColors\ProductivityTools.ConsoleColors.csproj">
-      <Project>{78913C2A-A689-42F2-94B9-11BB568418A0}</Project>
-      <Name>ProductivityTools.ConsoleColors</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\ProductivityTools.GetTask3.CommonConfiguration\ProductivityTools.GetTask3.CommonConfiguration.csproj">
-      <Project>{B6018BBD-3C5E-45EE-BAB5-099F1A1F8027}</Project>
-      <Name>ProductivityTools.GetTask3.CommonConfiguration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\ProductivityTools.GetTask3.Contract\ProductivityTools.GetTask3.Contract.csproj">
-      <Project>{4d0b0408-26b7-4be3-9acc-87862e542a26}</Project>
-      <Name>ProductivityTools.GetTask3.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\ProductivityTools.GetTask3.CoreObjects\ProductivityTools.GetTask3.CoreObjects.csproj">
-      <Project>{f57ec928-1328-4f02-8c6d-48d54a7cef22}</Project>
-      <Name>ProductivityTools.GetTask3.CoreObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ProductivityTools.GetTask3.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj">
-      <Project>{3d32fb16-44ed-499f-9b6d-efe5598193d3}</Project>
+    <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj">
+      <Project>{f7a0e4f0-56c3-4004-aed9-f7da6228af09}</Project>
       <Name>ProductivityTools.GetTask3.Client.Calls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ProductivityTools.GetTask3.Client\ProductivityTools.GetTask3.Client.csproj">
+    <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client\ProductivityTools.GetTask3.Client.csproj">
       <Project>{61497df7-371e-4247-b0e1-74271605baf2}</Project>
       <Name>ProductivityTools.GetTask3.Client</Name>
     </ProjectReference>
