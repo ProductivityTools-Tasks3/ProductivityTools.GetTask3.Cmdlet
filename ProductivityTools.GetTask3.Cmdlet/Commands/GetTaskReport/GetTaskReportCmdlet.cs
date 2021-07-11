@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.GetTaskReport
 {
-    [Cmdlet(VerbsCommon.Get, "TaskReport")]
+    [Cmdlet(VerbsCommon.Get, "TaskReport3")]
     public class GetTaskReportCmdlet : GT3CmldetsBase, IFromElementPath
     {
         [Parameter]

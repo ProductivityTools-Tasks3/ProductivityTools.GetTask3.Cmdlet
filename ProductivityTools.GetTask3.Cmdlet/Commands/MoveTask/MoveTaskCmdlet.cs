@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.MoveTask
 {
-    [Cmdlet("Move", "Task")]
+    [Cmdlet("Move", "Task3")]
     public class MoveTaskCmdlet : GT3CmldetsBase
     {
         [Parameter]

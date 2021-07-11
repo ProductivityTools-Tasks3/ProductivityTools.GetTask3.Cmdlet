@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.DeleteTask
 {
-    [Cmdlet("Delete", "Task")]
+    [Cmdlet("Delete", "Task3")]
     public class DeleteTaskCmdlet : GT3CmldetsBase
     {
         [Parameter(Position = 0)]

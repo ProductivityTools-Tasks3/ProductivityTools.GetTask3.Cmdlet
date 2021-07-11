@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3
 {
-    [Cmdlet(VerbsCommon.New, "Tomato")]
+    [Cmdlet(VerbsCommon.New, "Tomato3")]
     public class NewTomatoCmdlet : GT3CmldetsBase
     {
         [Parameter]

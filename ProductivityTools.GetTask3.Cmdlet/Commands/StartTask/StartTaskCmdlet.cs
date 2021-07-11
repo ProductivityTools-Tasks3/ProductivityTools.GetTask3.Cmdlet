@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.StartTask
 {
-    [Cmdlet("Start", "Task")]
+    [Cmdlet("Start", "Task3")]
     public class StartTaskCmdlet : GT3CmldetsBase, IFromElementPath
     {
         [Parameter(HelpMessage = "Id or Ids space separated which should be finished", Position = 0)]

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.SingleCommands
 {
-    [Cmdlet(VerbsCommon.Select, "Task")]
+    [Cmdlet(VerbsCommon.Select, "Task3")]
     public class SelectCurrentRootCmdlet : GT3CmldetsBase
     {
         [Parameter(Position = 0)]

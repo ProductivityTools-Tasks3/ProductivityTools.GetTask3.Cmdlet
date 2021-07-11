@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.GetDefinedTask
 {
-    [Cmdlet(VerbsCommon.Get, "DefinedTask")]
+    [Cmdlet(VerbsCommon.Get, "DefinedTask3")]
     public class GetDefinedTaskCmdlet : GT3CmldetsBase
     {
         [Parameter(HelpMessage ="Will show also task in given bags")]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.FinishTomato
 {
-    [Cmdlet("Finish", "Tomato")]
+    [Cmdlet("Finish", "Tomato3")]
     public class FinishTomatoCmdlet : GT3CmldetsBase
     {
         [Parameter]

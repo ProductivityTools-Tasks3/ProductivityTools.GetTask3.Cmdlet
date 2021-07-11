@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.GetTask3.Commands.DelayTask
 {
-    [Cmdlet("Delay", "Task")]
+    [Cmdlet("Delay", "Task3")]
     public class DelayTaskCmdlet : GT3CmldetsBase
     {
         [Parameter(Position = 0)]
