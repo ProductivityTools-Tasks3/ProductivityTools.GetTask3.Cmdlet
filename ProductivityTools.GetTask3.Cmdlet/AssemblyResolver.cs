@@ -44,9 +44,9 @@ namespace ProductivityTools.GetTask3
             "Microsoft.Extensions.Configuration.FileExtensions",
             //"Microsoft.Extensions.FileProviders.Physical",
             "Microsoft.Extensions.Configuration",
-            //"System.Buffers",
+            "System.Buffers",
             "System.Runtime.CompilerServices.Unsafe",
-            //"System.Numerics.Vectors",
+            "System.Numerics.Vectors",
             "System.Text.Json",
             //"Newtonsoft.Json"
             "System.Text.Encodings.Web",
