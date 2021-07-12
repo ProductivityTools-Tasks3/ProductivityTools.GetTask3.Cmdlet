@@ -1,196 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0B4D03D-3016-4589-9026-0DC131C76FBC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProductivityTools.GetTask3</RootNamespace>
-    <AssemblyName>ProductivityTools.GetTask3</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Description, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Description.1.0.0\lib\Description.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.5.0.0\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.5.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="ProductivityTools.ConsoleColors, Version=0.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ProductivityTools.ConsoleColors.0.0.7\lib\netstandard2.0\ProductivityTools.ConsoleColors.dll</HintPath>
-    </Reference>
-    <Reference Include="ProductivityTools.GetTask3.Contract, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ProductivityTools.GetTask3.Contract.0.0.2\lib\netstandard2.0\ProductivityTools.GetTask3.Contract.dll</HintPath>
-    </Reference>
-    <Reference Include="ProductivityTools.GetTask3.CoreObjects, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ProductivityTools.GetTask3.CoreObjects.0.0.1\lib\netstandard2.0\ProductivityTools.GetTask3.CoreObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="ProductivityTools.PSCmdlet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\ProductivityTools.PSCmdlet.0.0.6\lib\v4.6.1\ProductivityTools.PSCmdlet.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <None Remove="ProductivityTools.GetTask3.psd1" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="AssemblyResolver.cs" />
-    <Compile Include="Commands\AddDefinedTask\AddDefinedTaskCmdlet.cs" />
-    <Compile Include="Commands\AddDefinedTask\AddDefinedTaskCommand.cs" />
-    <Compile Include="Commands\AddTask\AddElement.cs" />
-    <Compile Include="Commands\AddTask\AddTaskCmdlet.cs" />
-    <Compile Include="Commands\DelayTask\DelayTaskCmdlet.cs" />
-    <Compile Include="Commands\DelayTask\DelayTaskToDate.cs" />
-    <Compile Include="Commands\DeleteTask\Delete.cs" />
-    <Compile Include="Commands\DeleteTask\DeleteTaskCmdlet.cs" />
-    <Compile Include="Commands\FinishTomato\FinishSingleTomato.cs" />
-    <Compile Include="Commands\FinishTomato\FinishTomatoCmdlet.cs" />
-    <Compile Include="Commands\GetDefinedTask\GetDefinedTaskCmdlet.cs" />
-    <Compile Include="Commands\GetDefinedTask\GetDefinedTaskListWitDetails.cs" />
-    <Compile Include="Commands\GetDefinedTask\GetDefinedTaskList.cs" />
-    <Compile Include="Commands\GetTaskReport\GetTaskReportCmdlet.cs" />
-    <Compile Include="Commands\GetTaskReport\MultiLevel.cs" />
-    <Compile Include="Commands\GetTask\Formatters\Parent.cs" />
-    <Compile Include="Commands\GetTask\Formatters\ChildCount.cs" />
-    <Compile Include="Commands\GetTask\Formatters\ItemName.cs" />
-    <Compile Include="Commands\GetTask\Formatters\Order.cs" />
-    <Compile Include="Commands\GetTask\Formatters\Category.cs" />
-    <Compile Include="Commands\GetTask\Formatters\Tomato.cs" />
-    <Compile Include="Commands\GetTomatoReport\GetTomatoReportCmdlet.cs" />
-    <Compile Include="Commands\GetTomatoReport\Report.cs" />
-    <Compile Include="Commands\IFromElementPath.cs" />
-    <Compile Include="Commands\MoveTask\MoveTaskCmdlet.cs" />
-    <Compile Include="Commands\MoveTask\MoveTaskToChild.cs" />
-    <Compile Include="Commands\MoveTask\MoveTaskToParent.cs" />
-    <Compile Include="Commands\NewTomato\NewtomatoByIds.cs" />
-    <Compile Include="Commands\NewTomato\NewTomatoByName.cs" />
-    <Compile Include="Commands\NewTomato\NewTomatoCmdlet.cs" />
-    <Compile Include="Commands\StartTask\Start.cs" />
-    <Compile Include="Commands\StartTask\StartTaskCmdlet.cs" />
-    <Compile Include="Domain\DefinedTask.cs" />
-    <Compile Include="Domain\ISessionMetaDataProvider.cs" />
-    <Compile Include="Domain\SessionMetaDataProvider.cs" />
-    <Compile Include="Repositories\DefinedTaskRepository.cs" />
-    <Compile Include="Domain\DomainBase.cs" />
-    <Compile Include="Domain\Task.cs" />
-    <Compile Include="Commands\CommandsBase.cs" />
-    <Compile Include="Commands\GetTask\GetTaskList.cs" />
-    <Compile Include="Commands\GetTask\GetTask3Cmdlet.cs" />
-    <Compile Include="Commands\SelectTask\Parent.cs" />
-    <Compile Include="Commands\SelectTask\DirectItem.cs" />
-    <Compile Include="Commands\SelectTask\SelectTaskCmdlet.cs" />
-    <Compile Include="Domain\TaskStructureFactory.cs" />
-    <Compile Include="Repositories\ITaskRepository.cs" />
-    <Compile Include="Repositories\TaskRepository.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\TomatoRepository.cs" />
-    <Compile Include="SingleCommands\AddPredefinedTask.cs" />
-    <Compile Include="SingleCommands\FinishTask.cs" />
-    <Compile Include="SingleCommands\GetPredefinedTask.cs" />
-    <Compile Include="SingleCommands\SingleCommandsBase.cs" />
-    <Compile Include="SingleCommands\UndoneTask.cs" />
-    <Compile Include="Verbose.cs" />
-    <Compile Include="View\ElementViewExtensions.cs" />
-    <Compile Include="View\SessionManager.cs" />
-    <Compile Include="Session\SessionElementMetadata.cs" />
-    <Compile Include="Session\SessionMetadata.cs" />
-    <Compile Include="View\PSElementView.cs" />
-    <Compile Include="View\VerboseHelper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
     <Content Include="ProductivityTools.GetTask3.psd1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj">
-      <Project>{f7a0e4f0-56c3-4004-aed9-f7da6228af09}</Project>
-      <Name>ProductivityTools.GetTask3.Client.Calls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client\ProductivityTools.GetTask3.Client.csproj">
-      <Project>{61497df7-371e-4247-b0e1-74271605baf2}</Project>
-      <Name>ProductivityTools.GetTask3.Client</Name>
-    </ProjectReference>
+    <Folder Include="Properties\" />
+	
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="ProductivityTools.ConsoleColors" Version="0.0.7" />
+    <PackageReference Include="ProductivityTools.GetTask3.Contract" Version="0.0.2" />
+    <PackageReference Include="ProductivityTools.GetTask3.CoreObjects" Version="0.0.1" />
+    <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj" />
+  </ItemGroup>
+ <PropertyGroup>
+ <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+ </PropertyGroup>
 </Project>

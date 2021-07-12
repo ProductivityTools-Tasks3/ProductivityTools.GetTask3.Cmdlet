@@ -29,9 +29,11 @@ namespace ProductivityTools.GetTask3.Client
             {
                 if (string.IsNullOrEmpty(token))
                 {
+                    Console.WriteLine("token is empty need to call identity server");
                     var client = new HttpClient();
 
                     var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.tech:8010/").Result;
+                    Console.WriteLine($"Discovery server{disco}");
                     if (disco.IsError)
                     {
                         Console.WriteLine(disco.Error);
