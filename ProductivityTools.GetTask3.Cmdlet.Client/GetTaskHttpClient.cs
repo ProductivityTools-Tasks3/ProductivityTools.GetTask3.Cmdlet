@@ -4,6 +4,7 @@ using ProductivityTools.GetTask3.Contract;
 using ProductivityTools.MasterConfiguration;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,53 +21,81 @@ namespace ProductivityTools.GetTask3.Client
         static string URL = "http://apigettask3.productivitytools.tech:8040/api/";// Consts.EndpointAddress;
        // static string URL = "http://localhost:5513/api/";// Consts.EndpointAddress;
 
-        static IConfigurationRoot configuration = new ConfigurationBuilder().AddMasterConfiguration().Build();
+         
 
         private static string token;
         private static string Token
         {
             get
             {
+                Console.WriteLine("GetToken");
                 if (string.IsNullOrEmpty(token))
                 {
-                    Console.WriteLine("token is empty need to call identity server");
-                    var client = new HttpClient();
-
-                    var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.tech:8010/").Result;
-                    Console.WriteLine($"Discovery server{disco}");
-                    if (disco.IsError)
+                    SetNewAccessToken();
+                }
+                else
+                {
+                    var tokenhanlder = new JwtSecurityTokenHandler();
+                    var jwtSecurityToke = tokenhanlder.ReadJwtToken(token);
+                    if(jwtSecurityToke.ValidTo<DateTime.UtcNow)
                     {
-                        Console.WriteLine(disco.Error);
+                        SetNewAccessToken();
                     }
-
-                    Console.WriteLine("GetTask3Cmdlet secret");
-                    Console.WriteLine(configuration["GetTask3Cmdlet"]);
-
-                    var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
-                    {
-                        Address = disco.TokenEndpoint,
-
-                        ClientId = "GetTask3Cmdlet",
-                        ClientSecret = configuration["GetTask3Cmdlet"],
-                        Scope = "GetTask3.API"
-                    }).Result;
-
-                    Console.WriteLine("Token response pw:");
-                    Console.WriteLine(tokenResponse.AccessToken);
-                    Console.WriteLine(tokenResponse.Error);
-
-                    if (tokenResponse.IsError)
-                    {
-                        Console.WriteLine(tokenResponse.Error);
-                    }
-
-                    Console.WriteLine(tokenResponse.Json);
-                    token = tokenResponse.AccessToken;
                 }
                 return token;
             }
         }
 
+        private static void SetNewAccessToken()
+        {
+            IConfigurationRoot configuration = null;
+            try
+            {
+                configuration = new ConfigurationBuilder().AddMasterConfiguration().Build();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+
+
+            Console.WriteLine("token is empty need to call identity server");
+            var client = new HttpClient();
+
+            var disco = client.GetDiscoveryDocumentAsync("https://identityserver.productivitytools.tech:8010/").Result;
+            Console.WriteLine($"Discovery server{disco}");
+            if (disco.IsError)
+            {
+                Console.WriteLine(disco.Error);
+            }
+
+            Console.WriteLine("GetTask3Cmdlet secret");
+            Console.WriteLine(configuration["GetTask3Cmdlet"]);
+
+            var tokenResponse = client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+
+                ClientId = "GetTask3Cmdlet",
+                ClientSecret = configuration["GetTask3Cmdlet"],
+                Scope = "GetTask3.API"
+            }).Result;
+
+            Console.WriteLine("Token response pw:");
+            Console.WriteLine(tokenResponse.AccessToken);
+            Console.WriteLine(tokenResponse.Error);
+
+            if (tokenResponse.IsError)
+            {
+                Console.WriteLine(tokenResponse.Error);
+            }
+
+            Console.WriteLine(tokenResponse.Json);
+            token = tokenResponse.AccessToken;
+        }
 
 
 
