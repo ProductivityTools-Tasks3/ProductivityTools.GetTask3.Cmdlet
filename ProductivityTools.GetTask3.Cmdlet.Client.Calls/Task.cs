@@ -32,10 +32,10 @@ namespace ProductivityTools.GetTask3.Client.Calls
             return await GetTaskHttpClient.Post2<object>(Consts.Task, Consts.Finish, new FinishRequest() { ElementId = elementId }, log);
         }
 
-        public async static Task<object> Start(int elementId, Action<string> log)
-        {
-            return await GetTaskHttpClient.Post2<object>(Consts.Task, Consts.Start, new StartRequest() { ElementId = elementId }, log);
-        }
+        //public async static Task<object> Start(int elementId, Action<string> log)
+        //{
+        //    return await GetTaskHttpClient.Post2<object>(Consts.Task, Consts.Start, new StartRequest() { ElementId = elementId }, log);
+        //}
 
         public async static Task<object> Undone(int elementId, Action<string> log)
         {

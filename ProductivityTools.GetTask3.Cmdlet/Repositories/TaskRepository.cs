@@ -50,7 +50,8 @@ namespace ProductivityTools.GetTask3.Domain
 
         public async void Start(int elementId)
         {
-            await ProductivityTools.GetTask3.Client.Calls.Task.Start(elementId, VerboseHelper.WriteVerboseStatic);
+            await ProductivityTools.GetTask3.Sdk.TaskClient.Start(elementId, VerboseHelper.WriteVerboseStatic);
+            //await ProductivityTools.GetTask3.Client.Calls.Task.Start(elementId, VerboseHelper.WriteVerboseStatic);
         }
 
         public async void Move(int[] elementIds, int target)
