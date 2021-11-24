@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using ProductivityTools.GetTask3.Contract;
 using ProductivityTools.GetTask3.CoreObjects;
 
@@ -13,7 +14,7 @@ namespace ProductivityTools.GetTask3.Domain
         void Finish(int elementId);
         void Start(int elementId);
         void Move(int[] elementsIds, int target);
-        ElementView GetStructure(int? currentNode, string path);
+        Task<ElementView> GetStructure(int? currentNode, string path);
         int? GetRoot(int? currentNode, string path);
         void Undone(int elementId);
     }

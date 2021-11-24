@@ -14,10 +14,11 @@ namespace ProductivityTools.GetTask3.Domain
 {
     class TaskRepositoryCmd : ITaskRepositoryCmd
     {
-        public ElementView GetStructure(int? currentNode, string path)
+        public async Task<ElementView> GetStructure(int? currentNode, string path)
         {
-            VerboseHelper.WriteVerboseStatic("Calling GetStructure");
-            var rootElement = GetTaskHttpClient.Post2<ElementView>(Consts.Task, Consts.TodayList, new ListRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
+            var rootElement= await ProductivityTools.GetTask3.Sdk.TaskClient.GetStructure(currentNode, path, VerboseHelper.WriteVerboseStatic);
+            //VerboseHelper.WriteVerboseStatic("Calling GetStructure");
+            //var rootElement = GetTaskHttpClient.Post2<ElementView>(Consts.Task, Consts.TodayList, new ListRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
             return rootElement;
         }
 

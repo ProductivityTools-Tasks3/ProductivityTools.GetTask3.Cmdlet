@@ -81,7 +81,7 @@ namespace ProductivityTools.GetTask3.App
             {
                 if (structure == null)
                 {
-                    structure = Repository.GetStructure(SelectedNodeElementId, From);
+                    structure = Repository.GetStructure(SelectedNodeElementId, From).Result;
 
                     CreateStructureMetadata(structure);
                 }
