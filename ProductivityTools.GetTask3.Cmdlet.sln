@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.GetTask3", "ProductivityTools.GetTask3.Cmdlet\ProductivityTools.GetTask3.csproj", "{F0B4D03D-3016-4589-9026-0DC131C76FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.GetTask3.2", "ProductivityTools.GetTask3.Cmdlet\ProductivityTools.GetTask3.2.csproj", "{F0B4D03D-3016-4589-9026-0DC131C76FBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.GetTask3.Client", "ProductivityTools.GetTask3.Cmdlet.Client\ProductivityTools.GetTask3.Client.csproj", "{61497DF7-371E-4247-B0E1-74271605BAF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.GetTask3.Client", "ProductivityTools.GetTask3.Cmdlet.Client\ProductivityTools.GetTask3.Client.csproj", "{61497DF7-371E-4247-B0E1-74271605BAF2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.GetTask3.Client.Calls", "ProductivityTools.GetTask3.Cmdlet.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj", "{F7A0E4F0-56C3-4004-AED9-F7DA6228AF09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductivityTools.GetTask3.Cmdlet", "Tests\ProductivityTools.GetTask3.Cmdlet\ProductivityTools.GetTask3.Cmdlet.csproj", "{5A698C37-C1E9-4466-96A8-6160F0202157}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.GetTask3", "ProductivityTools.GetTask3\ProductivityTools.GetTask3.csproj", "{10E6DFF5-E522-4A4E-90F9-2E42670BE501}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{F7A0E4F0-56C3-4004-AED9-F7DA6228AF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A0E4F0-56C3-4004-AED9-F7DA6228AF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A0E4F0-56C3-4004-AED9-F7DA6228AF09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A698C37-C1E9-4466-96A8-6160F0202157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A698C37-C1E9-4466-96A8-6160F0202157}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A698C37-C1E9-4466-96A8-6160F0202157}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A698C37-C1E9-4466-96A8-6160F0202157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E6DFF5-E522-4A4E-90F9-2E42670BE501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E6DFF5-E522-4A4E-90F9-2E42670BE501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E6DFF5-E522-4A4E-90F9-2E42670BE501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E6DFF5-E522-4A4E-90F9-2E42670BE501}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

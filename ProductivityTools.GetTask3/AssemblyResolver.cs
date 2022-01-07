@@ -51,6 +51,7 @@ namespace ProductivityTools.GetTask3
             "System.Text.Json",
             //"Newtonsoft.Json"
             "System.Text.Encodings.Web",
+            "System.Management.Automation",
         };
         public static Assembly ResolveExtenionAbstraction(object sender, ResolveEventArgs args)
         {
