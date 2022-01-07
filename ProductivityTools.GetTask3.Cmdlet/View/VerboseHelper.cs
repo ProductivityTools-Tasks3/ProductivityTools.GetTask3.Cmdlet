@@ -15,10 +15,8 @@ namespace ProductivityTools.GetTask3.View
                 if (IsVerbose)
                 {
                      Console.WriteLine(s);
-                }
-               
+                } 
             };
-
 
         }
 

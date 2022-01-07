@@ -23,7 +23,7 @@
     <PackageReference Include="ProductivityTools.ConsoleColors" Version="0.0.7" />
     <PackageReference Include="ProductivityTools.GetTask3.Contract" Version="0.0.2" />
     <PackageReference Include="ProductivityTools.GetTask3.CoreObjects" Version="0.0.1" />
-    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.5" />
+    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.9" />
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.6" />
   </ItemGroup>
 

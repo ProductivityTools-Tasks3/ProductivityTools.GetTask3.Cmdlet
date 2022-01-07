@@ -1,9 +1,11 @@
-﻿using ProductivityTools.GetTask3.Client;
+﻿using Microsoft.Extensions.Configuration;
+using ProductivityTools.GetTask3.Client;
 using ProductivityTools.GetTask3.Commands;
 using ProductivityTools.GetTask3.Contract;
 using ProductivityTools.GetTask3.Contract.Requests;
 using ProductivityTools.GetTask3.CoreObjects;
 using ProductivityTools.GetTask3.View;
+using ProductivityTools.MasterConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,29 @@ namespace ProductivityTools.GetTask3.Domain
 {
     class TaskRepositoryCmd : ITaskRepositoryCmd
     {
+
+        public TaskRepositoryCmd()
+        {
+            IConfigurationRoot configuration = null;
+            try
+            {
+                configuration = new ConfigurationBuilder().AddMasterConfiguration().Build();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+            this.TaskClient = new Sdk.TaskClient(GetTaskHttpClient.URL, configuration, (x) => Console.WriteLine(x));
+        }
+
+        private readonly ProductivityTools.GetTask3.Sdk.TaskClient TaskClient;
+
         public async Task<ElementView> GetStructure(int? currentNode, string path)
         {
-            var rootElement= await ProductivityTools.GetTask3.Sdk.TaskClient.GetStructure(currentNode, path, VerboseHelper.WriteVerboseStatic);
+            var rootElement= await this.TaskClient.GetStructure(currentNode, path);
             //VerboseHelper.WriteVerboseStatic("Calling GetStructure");
             //var rootElement = GetTaskHttpClient.Post2<ElementView>(Consts.Task, Consts.TodayList, new ListRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
             return rootElement;
@@ -25,7 +47,7 @@ namespace ProductivityTools.GetTask3.Domain
         public int? GetRoot(int? currentNode, string path)
         {
             VerboseHelper.WriteVerboseStatic("Calling GetRoot");
-            var rootElement = GetTaskHttpClient.Post2<int?>(Consts.Task, Consts.GetRoot, new GetRootRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
+            var rootElement = GetTaskHttpClient.Post2<int?>(ProductivityTools.GetTask3.Contract.Consts.Task, ProductivityTools.GetTask3.Contract.Consts.GetRoot, new GetRootRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
             return rootElement;
         }
 
@@ -51,7 +73,7 @@ namespace ProductivityTools.GetTask3.Domain
 
         public async void Start(int elementId)
         {
-            await ProductivityTools.GetTask3.Sdk.TaskClient.Start(elementId, VerboseHelper.WriteVerboseStatic);
+            await this.TaskClient.Start(elementId, VerboseHelper.WriteVerboseStatic);
             //await ProductivityTools.GetTask3.Client.Calls.Task.Start(elementId, VerboseHelper.WriteVerboseStatic);
         }
 
