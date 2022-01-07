@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AssemblyName>ProductivityTools.GetTask3</AssemblyName>
+    <RootNamespace>ProductivityTools.GetTask3</RootNamespace>
 
   </PropertyGroup>
 
@@ -16,5 +18,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProductivityTools.GetTask3.Cmdlet.Client.Calls\ProductivityTools.GetTask3.Client.Calls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ProductivityTools.GetTask3.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
