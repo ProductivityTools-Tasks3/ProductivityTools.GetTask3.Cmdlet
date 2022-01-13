@@ -1,18 +1,17 @@
-﻿using ProductivityTools.GetTask3.App;
-using ProductivityTools.GetTask3.Domain;
+﻿using ProductivityTools.GetTask3.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductivityTools.GetTask3.Commands.AddTask
+namespace ProductivityTools.GetTask3.Commands.AddTaskFinished
 {
-    class AddElement : PSCmdlet.PSCommandPT<AddTaskCmdlet>
+     class AddElement : PSCmdlet.PSCommandPT<AddTaskFinishedCmlet>
     {
         protected override bool Condition => true;
 
-        public AddElement(AddTaskCmdlet cmdlet) : base(cmdlet)
+        public AddElement(AddTaskFinishedCmlet cmdlet) : base(cmdlet)
         {
         }
 
@@ -22,7 +21,7 @@ namespace ProductivityTools.GetTask3.Commands.AddTask
             string[] elements = this.Cmdlet.Name.Split('\n').Where(x => !string.IsNullOrEmpty(x)).ToArray();
             foreach (var element in elements)
             {
-                ts.Add(element, this.Cmdlet.Type == CoreObjects.ElementType.NotDefined ? CoreObjects.ElementType.Task : this.Cmdlet.Type, false);
+                ts.Add(element, CoreObjects.ElementType.Task, true);
             }
         }
     }

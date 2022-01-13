@@ -12,9 +12,9 @@ namespace ProductivityTools.GetTask3.Client.Calls
     public static class Task
     {
         //pw: change this console.writeline to logging mechamism
-        public async static Task<object> Add(string name, int? parentId, Action<string> log)
+        public async static Task<object> Add(string name, int? parentId, bool finished, Action<string> log)
         {
-            return await GetTaskHttpClient.Post2<object>(Consts.Task, "Add", new AddRequest() { Name = name, ParentId = parentId }, log);
+            return await GetTaskHttpClient.Post2<object>(Consts.Task, "Add", new AddRequest() { Name = name, ParentId = parentId, Finished = finished }, log);
         }
 
         public async static Task<object> AddBag(string name, int? parentId, Action<string> log)
@@ -57,6 +57,6 @@ namespace ProductivityTools.GetTask3.Client.Calls
             return await GetTaskHttpClient.Post2<object>(Consts.Task, Consts.AddToTomatoById, new AddToTomatoByIdRequest() { ElementItems = elementIds }, log);
         }
 
-      
+
     }
 }

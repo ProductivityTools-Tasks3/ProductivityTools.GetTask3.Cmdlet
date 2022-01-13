@@ -121,7 +121,7 @@ namespace ProductivityTools.GetTask3.App
             fillOrder(ElementType.Task);
         }
 
-        public void Add(string name, ElementType type)
+        public void Add(string name, ElementType type, bool finished)
         {
             int? targetElement = null;
             if (string.IsNullOrEmpty(From))
@@ -132,7 +132,7 @@ namespace ProductivityTools.GetTask3.App
             {
                 targetElement = this.Repository.GetRoot(this.SelectedNodeElementId, this.From);
             }
-            this.Repository.Add(name, targetElement, type);
+            this.Repository.Add(name, targetElement, finished, type);
         }
 
         public void AddToTomato(int[] orderElementIds)

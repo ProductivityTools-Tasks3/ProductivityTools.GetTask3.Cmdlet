@@ -7,7 +7,7 @@ namespace ProductivityTools.GetTask3.Domain
 {
     public interface ITaskRepositoryCmd
     {
-        void Add(string Name, int? parentId, ElementType type);
+        void Add(string Name, int? parentId, bool finished, ElementType type);
         void AddToTomato(int[] elementIds);
         void Delay(int elementId, DateTime date);
         void Delete(int elementId);

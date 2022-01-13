@@ -38,7 +38,7 @@ namespace ProductivityTools.GetTask3.Domain
 
         public async Task<ElementView> GetStructure(int? currentNode, string path)
         {
-            var rootElement= await this.TaskClient.GetStructure(currentNode, path);
+            var rootElement = await this.TaskClient.GetStructure(currentNode, path);
             //VerboseHelper.WriteVerboseStatic("Calling GetStructure");
             //var rootElement = GetTaskHttpClient.Post2<ElementView>(Consts.Task, Consts.TodayList, new ListRequest() { ElementId = currentNode, Path = path }, VerboseHelper.WriteVerboseStatic).Result;
             return rootElement;
@@ -51,15 +51,15 @@ namespace ProductivityTools.GetTask3.Domain
             return rootElement;
         }
 
-        public async void Add(string name, int? parentId, ElementType type)
+        public async void Add(string name, int? parentId, bool finished, ElementType type)
         {
             switch (type)
             {
                 case ElementType.TaskBag:
-                    await ProductivityTools.GetTask3.Client.Calls.Task.AddBag(name, parentId,VerboseHelper.WriteVerboseStatic);
+                    await ProductivityTools.GetTask3.Client.Calls.Task.AddBag(name, parentId, VerboseHelper.WriteVerboseStatic);
                     break;
                 case ElementType.Task:
-                    await ProductivityTools.GetTask3.Client.Calls.Task.Add(name, parentId, VerboseHelper.WriteVerboseStatic);
+                    await ProductivityTools.GetTask3.Client.Calls.Task.Add(name, parentId, finished, VerboseHelper.WriteVerboseStatic);
                     break;
                 default:
                     break;
