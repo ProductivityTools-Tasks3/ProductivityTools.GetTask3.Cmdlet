@@ -12,7 +12,7 @@
 RootModule = 'ProductivityTools.GetTask3.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.19'
+ModuleVersion = '0.0.21'
 
 # ID used to uniquely identify this module
 GUID = '493b9fb8-d8ca-472d-bb71-65767c9e9714'
@@ -24,7 +24,7 @@ Author = 'Pawel wujczyk'
 Description = 'It is a cmdlet which allows to manage tasks from powershell'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @('Add-DefinedTask','Add-Task3','Delay-Task3','Delete-Task3','Finish-Task3','Get-PredefinedTask3','Undone-Task3','Finish-Tomato3','Get-DefinedTask3','Get-Task3','Get-TaskReport3','Get-TomatoReport3','Move-Task3','New-Tomato3','Select-Task3','Start-Task3')
+CmdletsToExport = @('Add-DefinedTask','Add-Task3','Delay-Task3','Delete-Task3','Finish-Task3','Get-PredefinedTask3','Undone-Task3','Finish-Tomato3','Get-DefinedTask3','Get-Task3','Get-TaskReport3','Get-TomatoReport3','Move-Task3','New-Tomato3','Select-Task3','Start-Task3','Add-FinishedTask3')
 
 # List of all files packaged with this module
 FileList=@(
