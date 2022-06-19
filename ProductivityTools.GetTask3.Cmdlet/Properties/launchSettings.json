@@ -3,7 +3,7 @@
     "ProductivityTools.GetTask3": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "commandLineArgs": "-noexit -command \"import-module d:\\GitHub\\ProductivityTools.GetTask3.Cmdlet\\ProductivityTools.GetTask3.Cmdlet\\bin\\Debug\\net5.0\\ProductivityTools.GetTask3.dll"
+      "commandLineArgs": "-noexit -command \"import-module d:\\GitHub\\ProductivityTools.GetTask3.Cmdlet\\ProductivityTools.GetTask3.Cmdlet\\bin\\Debug\\net6.0\\ProductivityTools.GetTask3.dll"
     }
   }
 }

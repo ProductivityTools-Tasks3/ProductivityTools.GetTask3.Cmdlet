@@ -1,6 +1,8 @@
 ﻿using IdentityModel.Client;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using ProductivityTools.GetTask3.Contract;
+using ProductivityTools.GetTask3.FirebaseAuth;
 using ProductivityTools.MasterConfiguration;
 using System;
 using System.Collections.Generic;
@@ -46,8 +48,15 @@ namespace ProductivityTools.GetTask3.Client
             }
         }
 
+
+     
+
         private static void SetNewAccessToken()
         {
+            FirebaseCustomTokenCaller caller = new FirebaseCustomTokenCaller();
+            caller.SetAccessTokenFirebase();
+
+
             IConfigurationRoot configuration = null;
             try
             {
