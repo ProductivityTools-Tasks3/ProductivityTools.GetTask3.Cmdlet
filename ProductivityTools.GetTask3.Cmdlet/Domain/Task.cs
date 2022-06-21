@@ -99,7 +99,7 @@ namespace ProductivityTools.GetTask3.App
             {
                 if (root != null)
                 {
-                    foreach (var element in root.Elements.Where(x => x.Type == type))
+                    foreach (var element in root.Elements.Where(x => x.Type == type.ToString()))
                     {
                         this.session.ElementOrder.Add(element.ElementId, new ElementMetadata()
                         {

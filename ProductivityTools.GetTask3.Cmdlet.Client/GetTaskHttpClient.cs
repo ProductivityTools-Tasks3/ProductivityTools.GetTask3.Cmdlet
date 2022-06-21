@@ -20,8 +20,8 @@ namespace ProductivityTools.GetTask3.Client
 {
     public class GetTaskHttpClient
     {
-        public static string URL = "https://apigettask3.productivitytools.tech:8040/api/";// Consts.EndpointAddress;
-        //public static string URL = "http://localhost:5513/api/";// Consts.EndpointAddress;
+        //public static string URL = "https://apigettask3.productivitytools.tech:8040/api/";// Consts.EndpointAddress;
+        public static string URL = "http://localhost:5513/api/";// Consts.EndpointAddress;
 
          
 

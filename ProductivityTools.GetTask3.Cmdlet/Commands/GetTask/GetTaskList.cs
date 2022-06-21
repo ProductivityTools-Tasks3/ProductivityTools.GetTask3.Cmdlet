@@ -54,7 +54,7 @@ namespace ProductivityTools.GetTask3.Commands.GetTask
 
         public void DisplayList(IEnumerable<PSElementView> elements, CoreObjects.ElementType type)
         {
-            foreach (var element in elements.Where(x => x.Element.Type == type))
+            foreach (var element in elements.Where(x => x.Element.Type == type.ToString()))
             {
                 WriteToScreen(element);
             }

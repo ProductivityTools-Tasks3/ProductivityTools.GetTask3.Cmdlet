@@ -15,15 +15,16 @@ namespace ProductivityTools.GetTask3.Commands.GetTask.Formatters
             var part = new ColorStringItem();
             var domain = element.Element;
             ElementMetadata viewMetadata = element.SessionElement;// this.View.ItemOrder[element.ElementId];
-            switch (domain.Type)
+
+            if (domain.Type == CoreObjects.ElementType.Task.ToString())
             {
-                case CoreObjects.ElementType.Task:
-                    part.Value = $"T{GetOrder(viewMetadata)}. ";
-                    break;
-                case CoreObjects.ElementType.TaskBag:
-                    part.Value = $"B{GetOrder(viewMetadata)}. ";
-                    break;
+                part.Value = $"T{GetOrder(viewMetadata)}. ";
             }
+            else if (domain.Type == CoreObjects.ElementType.TaskBag.ToString())
+            {
+                part.Value = $"B{GetOrder(viewMetadata)}. ";
+            }
+
             part.Color = 15;
             input.Add(part);
         }

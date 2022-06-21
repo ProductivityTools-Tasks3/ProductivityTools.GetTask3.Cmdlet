@@ -43,7 +43,7 @@ namespace ProductivityTools.GetTask3.Commands.GetTaskReport
 
         public void DisplayList(string parentPath, IEnumerable<ElementView> elements, CoreObjects.ElementType type)
         {
-            foreach (var element in elements.Where(x => x.Type == type))
+            foreach (var element in elements.Where(x => x.Type == type.ToString()))
             {
                 WriteToScreen(parentPath, element);
                 if (element.Elements.Any())

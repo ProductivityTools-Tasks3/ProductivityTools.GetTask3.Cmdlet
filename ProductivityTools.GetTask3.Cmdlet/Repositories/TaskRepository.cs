@@ -30,8 +30,8 @@ namespace ProductivityTools.GetTask3.Domain
                 Console.WriteLine(ex.Message);
                 throw;
             }
-
-            this.TaskClient = new Sdk.TaskClient(GetTaskHttpClient.URL, configuration, (x) => Console.WriteLine(x));
+            string webapikey = configuration["WebApiKey"];
+            this.TaskClient = new Sdk.TaskClient(GetTaskHttpClient.URL, webapikey, (x) => Console.WriteLine(x));
         }
 
         private readonly ProductivityTools.GetTask3.Sdk.TaskClient TaskClient;

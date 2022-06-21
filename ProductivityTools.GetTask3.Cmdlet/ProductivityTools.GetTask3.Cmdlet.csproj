@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.0.0" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.3.0-preview.4" />
     <PackageReference Include="ProductivityTools.ConsoleColors" Version="0.0.7" />
-    <PackageReference Include="ProductivityTools.GetTask3.Contract" Version="0.0.3" />
-    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.9" />
+    <PackageReference Include="ProductivityTools.GetTask3.Contract" Version="0.0.17" />
+    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.11" />
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.6" IncludeAssets="all"></PackageReference>
   </ItemGroup>
 

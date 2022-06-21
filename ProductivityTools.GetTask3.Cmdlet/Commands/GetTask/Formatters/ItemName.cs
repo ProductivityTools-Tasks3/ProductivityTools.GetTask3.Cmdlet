@@ -15,23 +15,23 @@ namespace ProductivityTools.GetTask3.Commands.GetTask.Formatters
         {
             var part = new ColorStringItem();
             var domain = element;
-            switch (domain.Type)
+
+            if (domain.Type == CoreObjects.ElementType.Task.ToString())
             {
-                case CoreObjects.ElementType.Task:
-                    part.Value = $"{domain.Name} ";
-                    break;
-                case CoreObjects.ElementType.TaskBag:
-                    part.Value = $"[{domain.Name}] ";
-                    break;
+                part.Value = $"{domain.Name} ";
+            }
+            else if (domain.Type == CoreObjects.ElementType.TaskBag.ToString())
+            {
+                part.Value = $"[{domain.Name}] ";
             }
 
             Dictionary<Func<bool>, byte> colormap = new Dictionary<Func<bool>, byte>();
             colormap.Add(() => true, 15);
-            colormap.Add(() => domain.Type == CoreObjects.ElementType.TaskBag, 15);
-            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag && domain.Delayed(), 9);
+            colormap.Add(() => domain.Type == CoreObjects.ElementType.TaskBag.ToString(), 15);
+            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag.ToString() && domain.Delayed(), 9);
             //pw: correct status
-            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag && domain.Status == "InProgress", 40);
-            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag && domain.Finished.HasValue, 8);
+            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag.ToString() && domain.Status == "InProgress", 40);
+            colormap.Add(() => domain.Type != CoreObjects.ElementType.TaskBag.ToString() && domain.Finished.HasValue, 8);
 
             foreach (var item in colormap)
             {

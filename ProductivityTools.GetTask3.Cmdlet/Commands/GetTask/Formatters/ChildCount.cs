@@ -12,17 +12,18 @@ namespace ProductivityTools.GetTask3.Commands.GetTask.Formatters
     {
         internal void Format(ColorString input, PSElementView element)
         {
+            Func<CoreObjects.ElementType, string> getString = (x) => x.ToString();
+
             var part = new ColorStringItem();
             var domain = element.Element;
             ElementMetadata viewMetadata = element.SessionElement;// this.View.ItemOrder[element.ElementId];
-            switch (domain.Type)
+            if(domain.Type== CoreObjects.ElementType.Task.ToString())
             {
-                case CoreObjects.ElementType.Task:
-                    part.Value = $"<{viewMetadata.ChildCount}>";
-                    break;
-                case CoreObjects.ElementType.TaskBag:
-                    part.Value = $"<{viewMetadata.ChildCount}t>";
-                    break;
+                part.Value = $"<{viewMetadata.ChildCount}>";
+            }
+            else if(domain.Type== CoreObjects.ElementType.TaskBag.ToString())
+            {
+                part.Value = $"<{viewMetadata.ChildCount}t>";
             }
             part.Color = 215;
             input.Add(part);
