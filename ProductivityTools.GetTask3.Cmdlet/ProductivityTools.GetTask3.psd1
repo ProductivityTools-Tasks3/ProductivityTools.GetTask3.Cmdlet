@@ -12,7 +12,7 @@
 RootModule = 'ProductivityTools.GetTask3.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.21'
+ModuleVersion = '0.0.22'
 
 # ID used to uniquely identify this module
 GUID = '493b9fb8-d8ca-472d-bb71-65767c9e9714'
