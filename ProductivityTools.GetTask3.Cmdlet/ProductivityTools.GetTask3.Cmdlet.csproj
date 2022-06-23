@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.3.0-preview.4" />
     <PackageReference Include="ProductivityTools.ConsoleColors" Version="0.0.7" />
     <PackageReference Include="ProductivityTools.GetTask3.Contract" Version="0.0.17" />
-    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.11" />
+    <PackageReference Include="ProductivityTools.GetTask3.Sdk" Version="0.0.12" />
     <PackageReference Include="ProductivityTools.PSCmdlet" Version="1.0.6" IncludeAssets="all"></PackageReference>
   </ItemGroup>
 
